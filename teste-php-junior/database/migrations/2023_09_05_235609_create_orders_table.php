@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('consumer_id');
             $table->decimal('price');
+            $table->enum('status', ['open', 'paid', 'canceled'])->default('open');
             $table->timestamps();
 
             $table->foreign('consumer_id')->references('id')->on('consumers')->onDelete('cascade');
