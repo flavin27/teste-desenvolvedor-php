@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('status', ['open', 'paid', 'canceled'])->default('open');
             $table->timestamps();
 
-            $table->foreign('consumer_id')->references('id')->on('consumers')->onDelete('cascade');
+            $table->foreign('consumer_id')->references('user_id')->on('consumers')->onDelete('cascade');
         });
     }
 
